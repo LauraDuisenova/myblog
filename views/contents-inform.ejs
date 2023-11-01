@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog Posts</title>
+</head>
+<body>
+  <h1>Blog Posts</h1>
+  <ul>
+    <% blogPosts.forEach(post => { %>
+      <li>
+        <h3><%= post.title %></h3>
+        <p>
+            <% if (post.content.length > 100) { %>
+                <%= post.content.slice(0, 100) %> 
+                <a href="#>">Read more</a>
+            <% } else { %>
+                <%= post.content %>
+            <% } %>
+        </p>
+      </li>
+    <% }); %>
+</ul>
+
+  <a href="/content">Add a New Blog Post</a>
+</body>
+</html>

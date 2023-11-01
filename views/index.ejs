@@ -1,0 +1,26 @@
+<div class="author">
+    <h1 class="author__heading">Hi, My name is Laura</h1>
+    <p class="author__body">I am second year student</p>
+</div>
+
+<img src="/img/photo_2023-10-31_21-54-07.jpg" alt="my photo" class="hero-image" width="528" height="528">
+
+<section class="articles">
+    <h2 class="articles__heading">Latest post </h2>
+    <ul>
+        <% blogPosts.forEach(post => { %>
+          <li>
+            <h3><%= post.title %></h3>
+            <p>
+                <% if (post.content.length > 100) { %>
+                    <%= post.content.slice(0, 100) %> 
+                    <a href="#>">Read more</a>
+                <% } else { %>
+                    <%= post.content %>
+                <% } %>
+            </p>
+          </li>
+        <% }); %>
+    </ul>
+<a href="/info" class="pagination">&lt;View Older Posts</a>
+</section>
